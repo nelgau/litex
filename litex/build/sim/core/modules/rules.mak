@@ -13,7 +13,7 @@ ifeq ($(UNAME_S),Darwin)
 else
     CFLAGS += -Wall -O3 -ggdb -fPIC -Werror
 endif
-LDFLAGS += -levent -shared -fPIC
+LDFLAGS += -levent -lz -shared -fPIC
 
 MOD_SRC_DIR=$(SRC_DIR)/modules/$(MOD)
 EXTRA_MOD_SRC_DIR=$(EXTRA_MOD_BASE_DIR)/$(MOD)
