@@ -2,6 +2,11 @@ include variables.mak
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Darwin)
+	ifneq ($(shell command -v brew),)
+		BREW_PREFIX = $(shell brew --prefix)
+		CFLAGS += -I$(BREW_PREFIX)/include
+		LDFLAGS += -L$(BREW_PREFIX)/lib
+	endif
 	CFLAGS += -I/usr/local/include/
 	LDFLAGS += -L/usr/local/lib
 	LDFLAGS += -lpthread -ljson-c -lz -lm -lstdc++ -ldl -levent
