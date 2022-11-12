@@ -174,7 +174,7 @@ $ litex_sim --cpu-type=vexriscv
 
 On MacOS:
 ```sh
-$ brew install json-c verilator libevent
+$ brew install json-c verilator libevent pkg-config
 $ brew cask install tuntap
 $ litex_sim --cpu-type=vexriscv
 ```
